@@ -1,0 +1,110 @@
+body{
+  background-color: #cac7c7;
+}
+h1{
+  text-align: center;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  margin: 50px;
+}
+#saper__container{
+  width:500px;
+  height:500px;
+  margin:0;
+  padding:0;
+  margin: 0 auto;
+
+}
+.field{
+  width:50px;
+  height:50px;
+  background-color: #8BC34A;
+  display:inline-block;
+  box-sizing: border-box;
+  vertical-align: top;
+  background-image: url('grass1.png');
+  background-size: cover;
+}
+.bomb{
+  background-image: url('poop__bomb.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.open{
+  background-color: green;
+}
+.marked{
+  background-color: orange;
+}
+.empty{
+  background-image: url('svg/flower.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bombs_1{
+  text-align: center;
+    line-height: 44px;
+    font-size: 2rem;
+    font-weight: 800;
+    color: #FFC107;
+    font-family: monospace;
+}
+.bombs_2{
+  text-align: center;
+      line-height: 44px;
+      font-size: 2rem;
+      font-weight: 800;
+      color: #ff5722;
+      font-family: monospace;
+}
+.bombs_3{
+  text-align: center;
+    line-height: 44px;
+    font-size: 2rem;
+    font-weight: 800;
+    color: #790b0b;
+    font-family: monospace;
+}
+.bombs_4{
+  text-align: center;
+      line-height: 44px;
+      font-size: 2rem;
+      font-weight: 800;
+      color: #0f516f;
+      font-family: monospace;
+}
+.bombs_5{
+  text-align: center;
+    line-height: 44px;
+    font-size: 2rem;
+    font-weight: 800;
+    color: #3a4829;
+    font-family: monospace;
+
+}
+.bombs_6{
+  text-align: center;
+    line-height: 44px;
+    font-size: 2rem;
+    font-weight: 800;
+    color: #3c0e3e;
+      font-family: monospace;
+}
+.bombs_7{
+  text-align: center;
+      line-height: 44px;
+      font-size: 2rem;
+      font-weight: 800;
+      color: #f9fbf2;
+        font-family: monospace;
+
+}
+.bombs_8{
+  text-align: center;
+      line-height: 44px;
+      font-size: 2rem;
+      font-weight: 800;
+      color: #46480e;
+      font-family: monospace;
+}
