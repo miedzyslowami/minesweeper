@@ -9,12 +9,22 @@
   <meta property="og:title" content="minesweeper" />
   <meta property="og:description" content="minesweeper" />
   <meta property="og:image" content="" />
-  <link href='index.css' rel='stylesheet' type='text/css'/>
-  <title>Saper</title>
+  <link href='css/index.css' rel='stylesheet' type='text/css'/>
+  <title>Shitsweeper</title>
 
 </head>
 <body>
   <h1>Shitsweeper</h1>
+  <form id="pick__level" class="pick__level">
+    <h2>Pick a level</h2>
+    <label for="easy" ><input id="easy" class="level" type="radio" name="level" value="easy" checked/><img src='images/easy.png' />easy</label>
+    <label for="regular" ><input  id="regular" class="level" type="radio" name="level" value="regular"/><img src='images/medium.png' />regular</label>
+    <label for="hard" ><input  id="hard" class="level" type="radio" name="level" value="hard"/><img src='images/hard.png' />hard</label>
+    <label for="width_10"><input type="radio" name="width" value="10" checked/>10</label>
+    <label for="width_10"><input type="radio" name="width" value="20"/>20</label>
+      <label for="width_10"><input type="radio" name="width" value="30"/>30</label>
+    <input  class="play__btn" type="submit" value="Play"/>
+  </form>
 <div id="saper__container" >
 
 </div>

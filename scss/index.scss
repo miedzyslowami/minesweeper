@@ -1,0 +1,129 @@
+$pallete:#FFC107 #ff5722 #790b0b #0f516f #3a4829 #3c0e3e #f9fbf2 #46480e;
+$fieldWidth:40px;
+body{
+  background-color: #cac7c7;
+  font-family: monospace;
+  h1{
+    text-align: center;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    margin: 50px;
+  }
+  h2{
+    text-align: center;
+    color:white;
+   }
+  .pick__level{
+      width:500px;
+      margin:10px auto;
+      padding: 20px 0;
+      text-transform: uppercase;
+      background-color: #607D8B;
+
+      color:white;
+      label{
+        display:inline-block;
+        text-align: center;
+        margin: 0 26px;
+        line-height: 2rem;
+        img{
+          width:50px;
+          display: block;
+          border-radius: 4px;
+          transition: background-color 0.3s ease-in;
+          background-color: transparent;
+        }
+      .level{
+        display: block;
+        margin:0 auto;
+        appearance: none;
+        transition: background-color 0.3s ease-in;
+        &:hover ~ img{
+          background-color: rgba(245, 238, 238, 0.45);
+        }
+        &:checked ~ img{
+          background-color: white;
+        }
+
+      }
+      }
+
+    .play__btn{
+      padding: 20px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-weight: 800;
+      border: 2px solid white;
+      background-color: transparent;
+      float: right;
+      margin: 0 26px;
+      box-sizing: border-box;
+      color:white;
+      transition: background-color 0.3s ease-in;
+      &:hover{
+        background-color: rgba(245, 238, 238, 0.45);
+
+      }
+    }
+    input[type='submit']{
+      float: right;
+    }
+    &:after{
+      clear:both;
+      content:"";
+      display: block;
+    }
+  }
+
+  #saper__container{
+
+    margin:0;
+    padding:0;
+    margin: 0 auto;
+    .field{
+      width:$fieldWidth;
+      height:$fieldWidth;
+      background-color: #8BC34A;
+      display:inline-block;
+      box-sizing: border-box;
+      vertical-align: top;
+      background-image: url('../images/grass1.png');
+      background-size: cover;
+
+    }
+    .bomb{
+      background-image: url('../images/poop__bomb.png');
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .open{
+      background-color: green;
+    }
+    .marked{
+      background-color: orange;
+    }
+    .empty{
+      background-image: url('../images/flower.png');
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    @for $i from 1 through 8{
+      .bombs_#{$i}{
+        text-align: center;
+          line-height: 44px;
+          font-size: 2rem;
+          font-weight: 800;
+          color:nth($pallete,$i);
+          background: green;
+      }
+    }
+
+  }
+  $width:10,20,30;
+  @each $element in $width{
+    .width__#{$element}{
+      width:$fieldWidth * $element;
+      height:$fieldWidth * $element;
+    }
+  }
+}

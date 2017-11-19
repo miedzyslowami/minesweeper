@@ -1,5 +1,9 @@
 document.addEventListener('DOMContentLoaded',()=>{
 
+
+
+
+
 const container = document.getElementById('saper__container');
 let bombsIDs = [],
     fieldList = [],//table of table of objects
@@ -11,17 +15,43 @@ const easyLevel = 0.15;
 const mediumLevel = 0.35;
 const hardLevel = 0.5;
 
-let level = easyLevel;
-let bombsNr=Math.floor(fieldWidth * fieldWidth * level);
+let level;
+let bombsNr;
+
+
+const pickLevel = document.getElementById('pick__level');
+
+
+pickLevel.addEventListener('submit',(e)=>{
+  e.preventDefault();
+  pickedLevel=document.querySelector('input[name="level"]:checked').value;
+  pickedWidth=parseInt(document.querySelector('input[name="width"]:checked').value);
+  pickALevel(pickedLevel,pickedWidth);
+})
+
 
 document.getElementById('saper__container').classList.add(`width__${fieldWidth}`);
 
+function pickALevel(pickedLevel,pickedWidth){
+  fieldWidth=pickedWidth;
+  if (pickedLevel==="easy"){
+      level=easyLevel;
+  }else if(pickedLevel==="regular"){
+      level=mediumLevel;
+  }else{
+      level=hardLevel;
+  }
+  bombsNr=Math.floor(fieldWidth * fieldWidth * level);
+  startGame();
+}
+
+
+
 function startGame(){
-  level=easyLevel;
-  fieldWidth=10;
+  console.log('starting a game on leve:',level);
   createDataArray(fieldWidth);
   drawBombs(fieldWidth,bombsNr);
-
+  console.log(bombsNr,fieldWidth);
   fieldList.forEach((row,rowId)=>{//add bombs to array of objects
       row.forEach((col,colId)=>{
         if(!bombsIDs.includes(col.id)){
@@ -44,7 +74,7 @@ function createDataArray(fieldWidth){//Create two dimensional array with objects
       counter++;//counter starts from 1, shows actual number of fields
       let fieldObject={id:counter,row:i,column:j,className:'field',revealed:false};
       fieldList[i].push(fieldObject);//add field to array
-      populateFields(fieldObject);//populate objects here so that bombs are not shown in HTML data
+      populateFields(fieldObject,fieldWidth);//populate objects here so that bombs are not shown in HTML data
     }
   }
 }
@@ -92,13 +122,14 @@ function countBombs(field){
   fieldList[fieldRow][fieldColumn].nearBombs=nearBombs;//add nearBombs to array of fields
 }
 
-function populateFields(fieldObject){
+function populateFields(fieldObject,width){
   let fieldDiv = document.createElement('div');
   fieldDiv.id=fieldObject.id;
   fieldDiv.dataset.row=fieldObject.row;
   fieldDiv.dataset.column=fieldObject.column;
   fieldDiv.className=fieldObject.className;
   container.appendChild(fieldDiv);
+  container.classList.add(`width__${width}`);
 }
 
 
@@ -208,5 +239,4 @@ function floodfill(emptyFields){
   })
   checkGameStatus(revealedFields);
 }
-startGame();
 })

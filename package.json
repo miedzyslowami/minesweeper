@@ -1,0 +1,35 @@
+{
+  "name": "mineseeper",
+  "version": "1.0.0",
+  "description": "game",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://miedzyslowami.github.io/mineseeper/"
+  },
+  "keywords": [],
+  "author": "Malgorzata Grajewska",
+  "license": "ISC",
+  "dependencies": {
+    
+  },
+  "devDependencies": {
+    "babel-core": "^6.23.1",
+    "babel-loader": "^6.3.2",
+   "babel-preset-env": "^1.6.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-sass": "^2.3.2",
+    "gulp-sourcemaps": "^1.6.0",
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.5.0"
+  },
+  "bugs": {
+    "url": "https://github.com/miedzyslowami/mineseeper/issues"
+  },
+  "homepage": "https://github.com/miedzyslowami/mineseeper#readme"
+}
